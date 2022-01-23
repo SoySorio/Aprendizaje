@@ -1,12 +1,23 @@
 import math
 
 def run():
-    contrasenna = input( 'Ingresa una contraseña: ')
+    repetir = True
 
-    entropia = calcular_entropia( contrasenna )
-    entropia = str( entropia )
+    while repetir:
+        contrasenna = input( 'Ingresa una contraseña: ')
 
-    print( 'Entropia: ' + entropia)
+        entropia = calcular_entropia( contrasenna )
+        entropia = str( entropia )
+
+        print( 'Entropia: ' + entropia + '\n')
+
+        otra_contrasenna = input( '¿Quieres probar otra contraseña? (S/n): ')
+
+        if otra_contrasenna == 'n':
+            print( 'Ok. ')
+            repetir = False
+        
+        print( '\n' )
 
 
 def calcular_entropia( contrasenna ):
