@@ -1,6 +1,15 @@
 import math
 
 def run():
+    contrasenna = input( 'Ingresa una contraseña: ')
+
+    entropia = calcular_entropia( contrasenna )
+    entropia = str( entropia )
+
+    print( 'Entropia: ' + entropia)
+
+
+def calcular_entropia( contrasenna ):
     MIN = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     MAY = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     NUM = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
@@ -11,9 +20,6 @@ def run():
     tmay = False
     tnum = False
     tsim = False
-
-
-    contrasenna = input( 'Ingresa una contraseña: ')
 
     for i in contrasenna: 
         if i in MIN:
@@ -36,8 +42,8 @@ def run():
 
     entropia = logaritmo * len( contrasenna )
     entropia = round( entropia, 1)
-    entropia = str( entropia )
-    print( 'Entropía: ' + entropia )
+
+    return entropia
         
 
 if __name__ == '__main__':
