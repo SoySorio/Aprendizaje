@@ -33,13 +33,10 @@ def run():
     if tnum: opciones += len( num )
     if tsim: opciones += len( sim )
 
-    print(opciones)
-
     logaritmo = math.log( opciones,2 )
-    print( logaritmo )
 
     entropia = logaritmo * len( contrasenna )
-
+    entropia = round( entropia, 1)
     print( entropia )
         
 
