@@ -1,11 +1,10 @@
-import getpass
 import math
 
 def run():
-    min = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    may = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    num = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-    sim = ['¿', '?', '¡', '!', '-', '_', ',', '.', '/', "'", '"', '$', '#', '%', '(', ')', '°', '*', '+', '{', '}', '[', ']', '^', '<', '>']
+    MIN = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    MAY = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    NUM = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+    SIM = ['¿', '?', '¡', '!', '-', '_', ',', '.', '/', "'", '"', '$', '#', '%', '(', ')', '°', '*', '+', '{', '}', '[', ']', '^', '<', '>']
 
     opciones = 0
     tmin = False
@@ -14,30 +13,31 @@ def run():
     tsim = False
 
 
-    contrasenna = input( 'Ingresa una contraseña ')
+    contrasenna = input( 'Ingresa una contraseña: ')
 
     for i in contrasenna: 
-        if i in min:
+        if i in MIN:
             tmin = True
-        elif i in may:
+        elif i in MAY:
             tmay = True
-        elif i in num:
+        elif i in NUM:
             tnum = True
-        elif i in sim:
+        elif i in SIM:
             tsim = True
         
         if tmin and tmay and tnum and tsim: break
 
-    if tmin: opciones += len( min )
-    if tmay: opciones += len( may )
-    if tnum: opciones += len( num )
-    if tsim: opciones += len( sim )
+    if tmin: opciones += len( MIN )
+    if tmay: opciones += len( MAY )
+    if tnum: opciones += len( NUM )
+    if tsim: opciones += len( SIM )
 
     logaritmo = math.log( opciones,2 )
 
     entropia = logaritmo * len( contrasenna )
     entropia = round( entropia, 1)
-    print( entropia )
+    entropia = str( entropia )
+    print( 'Entropía: ' + entropia )
         
 
 if __name__ == '__main__':
