@@ -4,9 +4,8 @@ import math
 def run():
     repetir = True
     
-    print( alfabeto.MIN )
 
-    """while repetir:
+    while repetir:
         contrasenna = input( 'Ingresa una contraseña: ')
 
         entropia = calcular_entropia( contrasenna )
@@ -20,37 +19,34 @@ def run():
             print( 'Ok. ')
             repetir = False
         
-        print( '\n' )"""
+        print( '\n' )
 
 
 def calcular_entropia( contrasenna ):
-    MIN = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    MAY = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    NUM = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-    SIM = ['¿', '?', '¡', '!', '-', '_', ',', '.', '/', "'", '"', '$', '#', '%', '(', ')', '°', '*', '+', '{', '}', '[', ']', '^', '<', '>']
 
-    opciones = 0
     tmin = False
     tmay = False
     tnum = False
     tsim = False
 
+    opciones = 0
+
     for i in contrasenna: 
-        if i in MIN:
+        if i in alfabeto.min:
             tmin = True
-        elif i in MAY:
+        elif i in alfabeto.may:
             tmay = True
-        elif i in NUM:
+        elif i in alfabeto.num:
             tnum = True
-        elif i in SIM:
+        elif i in alfabeto.sim:
             tsim = True
         
         if tmin and tmay and tnum and tsim: break
 
-    if tmin: opciones += len( MIN )
-    if tmay: opciones += len( MAY )
-    if tnum: opciones += len( NUM )
-    if tsim: opciones += len( SIM )
+    if tmin: opciones += len( alfabeto.min )
+    if tmay: opciones += len( alfabeto.may )
+    if tnum: opciones += len( alfabeto.num )
+    if tsim: opciones += len( alfabeto.min )
 
     logaritmo = math.log( opciones,2 )
 
