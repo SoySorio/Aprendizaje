@@ -1,3 +1,6 @@
+import getpass
+import math
+
 def run():
     min = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     may = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -11,7 +14,7 @@ def run():
     tsim = False
 
 
-    contrasenna = input( 'Ingresa una contraseña ' )
+    contrasenna = input( 'Ingresa una contraseña ')
 
     for i in contrasenna: 
         if i in min:
@@ -28,14 +31,17 @@ def run():
     if tmin: opciones += len( min )
     if tmay: opciones += len( may )
     if tnum: opciones += len( num )
-    if taim: opciones += len( sim )
+    if tsim: opciones += len( sim )
 
     print(opciones)
+
+    logaritmo = math.log( opciones,2 )
+    print( logaritmo )
+
+    entropia = logaritmo * len( contrasenna )
+
+    print( entropia )
         
-
-
-"""    longitud = len(minusculas) + len(mayusculas) + len(numeros) + len(simbolos)""" 
-
 
 if __name__ == '__main__':
     run()
