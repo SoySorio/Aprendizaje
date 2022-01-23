@@ -1,3 +1,5 @@
+import random
+import alfabeto
 def run():
     pass
 
