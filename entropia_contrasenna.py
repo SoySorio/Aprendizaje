@@ -1,9 +1,12 @@
+import alfabeto
 import math
 
 def run():
     repetir = True
+    
+    print( alfabeto.MIN )
 
-    while repetir:
+    """while repetir:
         contrasenna = input( 'Ingresa una contraseña: ')
 
         entropia = calcular_entropia( contrasenna )
@@ -17,7 +20,7 @@ def run():
             print( 'Ok. ')
             repetir = False
         
-        print( '\n' )
+        print( '\n' )"""
 
 
 def calcular_entropia( contrasenna ):
